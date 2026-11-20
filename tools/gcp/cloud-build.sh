@@ -41,6 +41,10 @@ mkdir -p "$SRC" && cd "$SRC"
 if [ -z "$SKIP_SYNC" ] || [ ! -f build/envsetup.sh ]; then
   repo sync -c -j"$(nproc)" --no-tags --no-clone-bundle --force-sync
 fi
+# Some projects keep binaries in Git LFS (the WebView APKs, for one). Without
+# this, the build copies a 134-byte LFS pointer instead of the APK.
+git lfs install >/dev/null
+repo forall -j"$(nproc)" -c 'if grep -qs "filter=lfs" .gitattributes; then git lfs pull; fi'
 
 echo "== 4/6 Quest 1 device tree"
 if [ -d device/oculus/monterey ]; then
