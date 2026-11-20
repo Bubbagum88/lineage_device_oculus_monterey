@@ -78,6 +78,22 @@ BOARD_USES_QCOM_HARDWARE := true
 # blobs, and hwcomposer.msm8998 fails its dependency check (no libmemalloc).
 QCOM_SOONG_NAMESPACE :=
 
+# Wi-Fi
+# LineageOS always defines libwifi-hal and the Wi-Fi HAL service, so they can't
+# be blobs, and the Qualcomm Wi-Fi HAL it builds them against needs
+# libwpa_client from wpa_supplicant_8. So the whole Wi-Fi userspace (HAL,
+# wpa_supplicant, hostapd) is built from source, as on other msm8998 devices.
+# The stock driver config files (WCNSS_qcom_cfg.ini, wpa_supplicant*.conf) and
+# init.monterey.rc's wpa_supplicant service stay as they are.
+BOARD_HAS_QCOM_WLAN := true
+BOARD_WLAN_DEVICE := qcwcn
+BOARD_HOSTAPD_DRIVER := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
+WPA_SUPPLICANT_VERSION := VER_0_8_X
+
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop

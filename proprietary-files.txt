@@ -27,35 +27,16 @@ vendor/lib/rfsa/adsp/libvpp_frc.so
 vendor/lib/rfsa/adsp/libvpp_svc_skel.so
 
 # Atrace
-vendor/bin/hw/android.hardware.atrace@1.0-service
-vendor/etc/init/android.hardware.atrace@1.0-service.rc
-vendor/etc/vintf/manifest/android.hardware.atrace@1.0-service.xml
 
 # Audio
-vendor/bin/hw/android.hardware.audio@2.0-service
-vendor/etc/init/android.hardware.audio@2.0-service.rc
-vendor/lib/hw/android.hardware.audio.effect@5.0-impl.so
-vendor/lib/hw/android.hardware.audio@5.0-impl.so
-vendor/lib/hw/audio.primary.default.so
 vendor/lib/hw/audio.primary.msm8998.so
-vendor/lib/hw/audio.r_submix.default.so
-vendor/lib/hw/audio.usb.default.so
-vendor/lib/libalsautils.so
 vendor/lib/libaudio_log_utils.so
-vendor/lib64/hw/android.hardware.audio.effect@5.0-impl.so
-vendor/lib64/hw/android.hardware.audio@5.0-impl.so
-vendor/lib64/hw/audio.primary.default.so
 vendor/lib64/hw/audio.primary.msm8998.so
-vendor/lib64/hw/audio.r_submix.default.so
-vendor/lib64/hw/audio.usb.default.so
-vendor/lib64/libalsautils.so
 vendor/lib64/libaudio_log_utils.so
 
 # Audio (FX modules)
-vendor/lib/soundfx/libdynproc.so
 vendor/lib/soundfx/libstubvoiceprocessing.so
 vendor/lib/soundfx/libvolumelistener.so
-vendor/lib64/soundfx/libdynproc.so
 vendor/lib64/soundfx/libstubvoiceprocessing.so
 vendor/lib64/soundfx/libvolumelistener.so
 
@@ -81,32 +62,18 @@ vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 
 # Boot
-vendor/bin/hw/android.hardware.boot@1.0-service
-vendor/etc/init/android.hardware.boot@1.0-service.rc
-vendor/lib/hw/android.hardware.boot@1.0-impl.so
-vendor/lib64/hw/android.hardware.boot@1.0-impl.so
 
 # CAS
-vendor/bin/hw/android.hardware.cas@1.1-service
-vendor/etc/init/android.hardware.cas@1.1-service.rc
-vendor/etc/vintf/manifest/android.hardware.cas@1.1-service.xml
 
 # CDSP
 vendor/lib/libcdsprpc.so
 vendor/lib64/libcdsprpc.so
 
 # Configstore
-vendor/bin/hw/android.hardware.configstore@1.1-service
-vendor/etc/init/android.hardware.configstore@1.1-service.rc
-vendor/lib64/libhwminijail.so
 
 # Display
-vendor/bin/hw/android.hardware.graphics.allocator@2.0-service
 vendor/bin/hw/android.hardware.graphics.composer@2.1-service.monterey
-vendor/bin/hw/android.hardware.memtrack@1.0-service
-vendor/etc/init/android.hardware.graphics.allocator@2.0-service.rc
 vendor/etc/init/android.hardware.graphics.composer@2.1-service.monterey.rc
-vendor/etc/init/android.hardware.memtrack@1.0-service.rc
 vendor/lib/egl/eglSubDriverAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
@@ -114,8 +81,6 @@ vendor/lib/egl/libGLESv2_adreno.so
 vendor/lib/egl/libQTapGLES.so
 vendor/lib/egl/libq3dtools_adreno.so
 vendor/lib/egl/libq3dtools_esx.so
-vendor/lib/hw/android.hardware.memtrack@1.0-impl.so
-vendor/lib/hw/gralloc.default.so
 vendor/lib/hw/gralloc.msm8998.so
 vendor/lib/hw/hwcomposer.msm8998.so
 vendor/lib/hw/memtrack.msm8998.so
@@ -153,9 +118,6 @@ vendor/lib64/egl/libGLESv2_adreno.so
 vendor/lib64/egl/libQTapGLES.so
 vendor/lib64/egl/libq3dtools_adreno.so
 vendor/lib64/egl/libq3dtools_esx.so
-vendor/lib64/hw/android.hardware.graphics.allocator@2.0-impl.so
-vendor/lib64/hw/android.hardware.memtrack@1.0-impl.so
-vendor/lib64/hw/gralloc.default.so
 vendor/lib64/hw/gralloc.msm8998.so
 vendor/lib64/hw/hwcomposer.msm8998.so
 vendor/lib64/hw/memtrack.msm8998.so
@@ -167,7 +129,6 @@ vendor/lib64/libdrmutils.so
 vendor/lib64/libgpu_tonemapper.so
 vendor/lib64/libgrallocutils.so
 vendor/lib64/libgsl.so
-vendor/lib64/libhwc2onfbadapter.so
 vendor/lib64/libllvm-glnext.so
 vendor/lib64/libqdMetaData.so
 vendor/lib64/libqdutils.so
@@ -197,24 +158,15 @@ vendor/firmware/a540_gpmu.fw2
 vendor/firmware/a540_gpmu.fw2
 
 # DRM
-vendor/bin/hw/android.hardware.drm@1.0-service
-vendor/bin/hw/android.hardware.drm@1.2-service.clearkey
 vendor/bin/hw/android.hardware.drm@1.2-service.widevine
-vendor/etc/init/android.hardware.drm@1.0-service.rc
-vendor/etc/init/android.hardware.drm@1.2-service.clearkey.rc
 vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc
 vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.2-service.widevine.xml
-vendor/lib/hw/android.hardware.drm@1.0-impl.so
-vendor/lib/mediacas/libclearkeycasplugin.so
-vendor/lib/mediadrm/libdrmclearkeyplugin.so
 vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib/libcpion.so
 vendor/lib/libdrmfs.so
 vendor/lib/libhdcpsrm.so
 vendor/lib/liboemcrypto.so
 vendor/lib64/hw/android.hardware.drm@1.0-impl.so
-vendor/lib64/mediacas/libclearkeycasplugin.so
-vendor/lib64/mediadrm/libdrmclearkeyplugin.so
 vendor/lib64/mediadrm/libwvdrmengine.so
 vendor/lib64/libcpion.so
 vendor/lib64/libdrmfs.so
@@ -233,11 +185,7 @@ vendor/etc/init/android.hardware.dumpstate@1.0-service.ovr.rc
 vendor/etc/vintf/manifest/android.hardware.dumpstate@1.0-service.ovr.xml
 
 # Gatekeeper
-vendor/bin/hw/android.hardware.gatekeeper@1.0-service
-vendor/etc/init/android.hardware.gatekeeper@1.0-service.rc
-vendor/lib/hw/android.hardware.gatekeeper@1.0-impl.so
 vendor/lib/hw/gatekeeper.msm8998.so
-vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl.so
 vendor/lib64/hw/gatekeeper.msm8998.so
 
 # Health
@@ -251,14 +199,8 @@ vendor/lib64/libosutils.so
 vendor/lib64/vendor.oculus.hardware.telemetry@1.0.so
 
 # Keymaster
-vendor/bin/hw/android.hardware.keymaster@3.0-service
-vendor/etc/init/android.hardware.keymaster@3.0-service.rc
-vendor/lib/hw/android.hardware.keymaster@3.0-impl.so
 vendor/lib/hw/keystore.msm8998.so
-vendor/lib/libkeymaster3device.so
-vendor/lib64/hw/android.hardware.keymaster@3.0-impl.so
 vendor/lib64/hw/keystore.msm8998.so
-vendor/lib64/libkeymaster3device.so
 
 # Light
 vendor/bin/hw/android.hardware.light@2.0-service.monterey
@@ -268,12 +210,8 @@ vendor/lib64/liblight.so
 vendor/lib64/vendor.oculus.hardware.light@2.0.so
 
 # Local time
-vendor/lib/hw/local_time.default.so
-vendor/lib64/hw/local_time.default.so
 
 # Media
-vendor/bin/hw/android.hardware.media.omx@1.0-service
-vendor/etc/init/android.hardware.media.omx@1.0-service.rc
 vendor/etc/seccomp_policy/mediacodec.policy
 vendor/etc/seccomp_policy/mediacodec.policy
 vendor/lib/libOmxAacDec.so
@@ -362,7 +300,6 @@ vendor/lib/libqmiservices.so
 vendor/lib/libqsocket.so
 vendor/lib64/libdsutils.so
 vendor/lib64/libidl.so
-vendor/lib64/libjson.so
 vendor/lib64/libmdmdetect.so
 vendor/lib64/libqmi_cci.so
 vendor/lib64/libqmi_client_qmux.so
@@ -374,11 +311,9 @@ vendor/lib64/libqrtr.so
 vendor/lib64/libqsocket.so
 
 # RenderScript
-vendor/lib/hw/android.hardware.renderscript@1.0-impl.so
 vendor/lib/libRSDriver_adreno.so
 vendor/lib/librs_adreno.so
 vendor/lib/librs_adreno_sha1.so
-vendor/lib64/hw/android.hardware.renderscript@1.0-impl.so
 vendor/lib64/libRSDriver_adreno.so
 vendor/lib64/librs_adreno.so
 vendor/lib64/librs_adreno_sha1.so
@@ -387,8 +322,6 @@ vendor/lib64/librs_adreno_sha1.so
 vendor/etc/vintf/manifest/android.hardware.sensors@2.0-service.xml
 
 # Soundtrigger
-vendor/lib/hw/android.hardware.soundtrigger@2.2-impl.so
-vendor/lib64/hw/android.hardware.soundtrigger@2.2-impl.so
 
 # Thermal
 vendor/bin/hw/android.hardware.thermal@2.0-service.monterey
@@ -423,23 +356,9 @@ vendor/lib64/libvrsensors-utils.so
 vendor/lib64/vendor.oculus.hardware.sensors@1.0.so
 
 # Wi-Fi
-vendor/bin/hw/android.hardware.wifi@1.0-service
-vendor/bin/hw/hostapd
-vendor/bin/hw/wpa_supplicant
 vendor/bin/cnss-daemon
-vendor/bin/wpa_cli
-vendor/etc/init/android.hardware.wifi@1.0-service.rc
 vendor/lib/libperipheral_client.so
-vendor/lib/libwifi-hal-ctrl.so
-vendor/lib/libwifi-hal-qcom.so
-vendor/lib/libwpa_client.so
-vendor/lib64/libkeystore-engine-wifi-hidl.so
-vendor/lib64/libkeystore-wifi-hidl.so
 vendor/lib64/libperipheral_client.so
-vendor/lib64/libwifi-hal-ctrl.so
-vendor/lib64/libwifi-hal-qcom.so
-vendor/lib64/libwifi-hal.so
-vendor/lib64/libwpa_client.so
 vendor/lib64/vendor.oculus.hardware.wifi.supplicant@1.0.so
 
 # Wi-Fi configs
@@ -460,11 +379,9 @@ vendor/bin/hw/vendor.oculus.hardware.catty@1.0-service
 vendor/bin/hw/vendor.oculus.hardware.devicecert@1.0-service.monterey
 vendor/bin/hw/vendor.oculus.hardware.sensors@1.0-iad
 vendor/bin/hw/vendor.oculus.hardware.sensors@1.0-service
-vendor/bin/bc
 vendor/bin/board_init
 vendor/bin/catty
 vendor/bin/cnss_diag
-vendor/bin/dumpsys
 vendor/bin/energy-awareness
 vendor/bin/fw_init
 vendor/bin/irsc_util
@@ -517,21 +434,17 @@ vendor/etc/assistant/kwsEngine_vad.json
 vendor/etc/init/board_init.rc
 vendor/etc/init/fw_init.rc
 vendor/etc/init/fw_init_bootstat.rc
-vendor/etc/init/hostapd.android.rc
 vendor/etc/init/vendor.oculus.hardware.catty@1.0-service.rc
 vendor/etc/init/vendor.oculus.hardware.devicecert@1.0-service.monterey.rc
 vendor/etc/init/vendor.oculus.hardware.sensors@1.0-iad.rc
 vendor/etc/init/vendor.oculus.hardware.sensors@1.0-service.rc
-vendor/etc/init/vndservicemanager.rc
 vendor/etc/init/wifisighelper.rc
-vendor/etc/seccomp_policy/configstore@1.1.policy
 vendor/etc/vintf/manifest/vendor.oculus.hardware.catty@1.0-service.xml
 vendor/etc/vintf/manifest/vendor.oculus.hardware.devicecert@1.0-service.monterey.xml
 vendor/etc/vintf/manifest/vendor.oculus.hardware.graphics.composer@1.1-impl-monterey.xml
 vendor/etc/vintf/manifest/vendor.oculus.hardware.sensors@1.0-service.xml
 vendor/etc/vintf/manifest/vendor.oculus.hardware.sensors_java@1.0-service.xml
 vendor/etc/catty.cfg
-vendor/etc/mkshrc
 vendor/etc/msm_irqbalance.conf
 vendor/etc/powerhint.json
 vendor/etc/public.libraries.system.txt
@@ -604,7 +517,6 @@ vendor/lib/libsecureui_svcsock.so
 vendor/lib/libspl.so
 vendor/lib/libssd.so
 vendor/lib/libsystem_health_mon.so
-vendor/lib/libtinyxml.so
 vendor/lib/libxml.so
 vendor/lib/vendor.oculus.hardware.graphics.composer@1.0.so
 vendor/lib/vendor.oculus.hardware.graphics.composer@1.1.so
@@ -663,7 +575,6 @@ vendor/lib64/libssd.so
 vendor/lib64/libsyncboss.so
 vendor/lib64/libsystem_health_mon.so
 vendor/lib64/libtelemetry.so
-vendor/lib64/libtinyxml.so
 vendor/lib64/libwavreader.so
 vendor/lib64/libxml.so
 vendor/lib64/vendor.oculus.hardware.catty@1.0.so
