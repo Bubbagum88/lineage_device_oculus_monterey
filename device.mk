@@ -50,12 +50,21 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     local_time.default
 
-# Needed by stock blobs: libhwc2onfbadapter (composer@2.1-service.monterey),
-# libjson (pd-mapper), libcld80211 (cnss-daemon).
+# AOSP libraries that stock blobs link (ELF NEEDED in the stock image):
+# libcld80211 (cnss-daemon), libdrm (libsdmcore, libdrmutils),
+# libhwc2on1adapter and libhwc2onfbadapter (composer@2.1-service.monterey),
+# libjson (pd-mapper), libkeymaster4support (libdevicecertserviceimpl),
+# libstagefright_softomx (libstagefright_softomx_plugin),
+# libtinycompress (audio.primary.msm8998).
 PRODUCT_PACKAGES += \
     libcld80211 \
+    libdrm \
+    libhwc2on1adapter \
     libhwc2onfbadapter \
-    libjson
+    libjson \
+    libkeymaster4support \
+    libstagefright_softomx \
+    libtinycompress
 
 # Wi-Fi (see BoardConfig.mk)
 PRODUCT_PACKAGES += \
