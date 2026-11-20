@@ -69,6 +69,10 @@ TARGET_COPY_OUT_VENDOR := system/vendor
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8998
+# Use LineageOS's msm8998 CAF trees and keep AOSP's hardware/qcom/* (its
+# camera HAL needs CAF include paths) out of the build. Every HAL here still
+# comes from the stock blobs; this only changes which source trees are parsed.
+BOARD_USES_QCOM_HARDWARE := true
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
