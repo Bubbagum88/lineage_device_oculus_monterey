@@ -3,11 +3,5 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-// Init scripts
-// Init configuration files
-// fstab
-prebuilt_etc {
-    name: "fstab.monterey",
-    src: "etc/fstab.monterey",
-    vendor: true,
-}
+// Root files (init scripts, fstab) are in Android.mk: they install to the
+// root of the system-as-root image, as on the stock firmware.

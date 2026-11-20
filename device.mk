@@ -37,6 +37,8 @@ PRODUCT_CHARACTERISTICS := nosdcard
 # Rootdir
 PRODUCT_PACKAGES += \
     fstab.monterey \
+    init.monterey.rc \
+    init.monterey.usb.rc \
     init.recovery.monterey.rc \
     init.recovery.oculus.rc \
     ueventd.monterey.rc
