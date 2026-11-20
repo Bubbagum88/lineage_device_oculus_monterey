@@ -367,7 +367,6 @@ vendor/etc/wifi/p2p_supplicant_overlay.conf
 vendor/etc/wifi/wpa_supplicant_overlay.conf
 
 # Wi-Fi firmware
-vendor/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini
 
 # Wi-Fi Display
 etc/wfdconfig.xml
@@ -392,7 +391,6 @@ vendor/bin/syncboss_consumers_ctl
 vendor/bin/syncboss_input_tool
 vendor/bin/wattsup
 vendor/bin/wifisighelper
-vendor/bin/xzcat
 vendor/dsp/AlacDecoderModule.so.1
 vendor/dsp/ApeDecoderModule.so.1
 vendor/dsp/AudioSphereModule.so.1
