@@ -272,7 +272,6 @@ vendor/lib/hw/local_time.default.so
 vendor/lib64/hw/local_time.default.so
 
 # Media
-etc/seccomp_policy/mediacodec.policy
 vendor/bin/hw/android.hardware.media.omx@1.0-service
 vendor/etc/init/android.hardware.media.omx@1.0-service.rc
 vendor/etc/seccomp_policy/mediacodec.policy
