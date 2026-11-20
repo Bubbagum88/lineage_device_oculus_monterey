@@ -48,8 +48,15 @@ BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_CONFIG := monterey_defconfig
 TARGET_KERNEL_SOURCE := kernel/oculus/monterey
 
-# Kernel - prebuilt
-TARGET_FORCE_PREBUILT_KERNEL := true
+# Kernel: built from Meta's released source (facebookincubator/oculus-linux-kernel,
+# branch oculus-quest-kernel-master: 4.4.205 with monterey_defconfig, the same
+# version as the stock kernel). LineageOS generates its kernel headers from the
+# source, and the Qualcomm Wi-Fi HAL needs them; with a prebuilt kernel
+# LineageOS clears TARGET_KERNEL_SOURCE and that step fails.
+# prebuilts/kernel is the stock kernel, kept for comparison: set
+# TARGET_FORCE_PREBUILT_KERNEL := true to put it in boot.img instead (Wi-Fi
+# HAL then has no headers to build against).
+TARGET_FORCE_PREBUILT_KERNEL ?= false
 ifeq ($(TARGET_FORCE_PREBUILT_KERNEL),true)
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilts/kernel
 endif
