@@ -10,6 +10,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from monterey device
 $(call inherit-product, device/oculus/monterey/device.mk)
 
+# BRING-UP: adb without key authorization. /data is a RAM disk during
+# bring-up, so no adb key can be stored, and nobody can accept the prompt
+# in the headset. Remove before daily use.
+WITH_ADB_INSECURE := true
+
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
