@@ -8,6 +8,7 @@ DEVICE_PATH := device/oculus/monterey
 # A/B
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
+    boot \
     system
 BOARD_USES_RECOVERY_AS_BOOT := true
 
@@ -38,9 +39,12 @@ TARGET_SCREEN_DENSITY := 235
 
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_CMDLINE := androidboot.configfs=true androidboot.hardware=monterey ehci-hcd.park=3 lpm_levels.sleep_disabled=1 msm_rtb.filter=0x237 sched_enable_hmp=1 sched_enable_power_aware=1 service_locator.enable=1 softdog.soft_panic=1 swiotlb=2048 user_debug=31 bootver=1596585601 cursysver=1596585601 minsysver=1 buildvariant=user veritykeyid=id:cc158dc3bf03e76f1e4f8e38b2841cb9f2d421e4
+BOARD_KERNEL_CMDLINE := androidboot.configfs=true androidboot.hardware=monterey ehci-hcd.park=3 lpm_levels.sleep_disabled=1 msm_rtb.filter=0x237 sched_enable_hmp=1 sched_enable_power_aware=1 service_locator.enable=1 softdog.soft_panic=1 swiotlb=2048 user_debug=31 bootver=1596585601 cursysver=1596585601 minsysver=1 androidboot.selinux=permissive
+# Bring-up only: permissive SELinux until a sepolicy exists. Only honoured on
+# userdebug/eng builds. Dropped from the stock cmdline: buildvariant=user and
+# Meta's dm-verity key id (our system image is not signed with Meta's key).
 BOARD_KERNEL_PAGESIZE := 4096
-BOARD_KERNEL_IMAGE_NAME := Image
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_CONFIG := monterey_defconfig
 TARGET_KERNEL_SOURCE := kernel/oculus/monterey
 
@@ -53,7 +57,15 @@ endif
 # Partitions
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
-BOARD_BOOTIMAGE_PARTITION_SIZE := 29855744
+# Sizes measured on a Quest 1 with `blockdev --getsize64` (boot_a, system_a),
+# matching the openquest project's values. Decimal: the build reads them with
+# int(s, 10).
+BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864        # 0x4000000
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2684354560    # 0xA0000000
+BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
+
+# No vendor partition on the Quest 1: /vendor is a symlink into /system.
+TARGET_COPY_OUT_VENDOR := system/vendor
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8998
@@ -61,7 +73,6 @@ TARGET_BOARD_PLATFORM := msm8998
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
-TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.monterey
