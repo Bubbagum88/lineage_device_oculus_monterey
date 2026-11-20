@@ -89,6 +89,9 @@ BOARD_USES_QCOM_HARDWARE := true
 # blobs, and hwcomposer.msm8998 fails its dependency check (no libmemalloc).
 QCOM_SOONG_NAMESPACE :=
 
+# Android IDs (vendor_qrtr etc.) and file capabilities, as on stock.
+TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
+
 # Audio: the stock audio policy is XML (vendor/etc/audio_policy_configuration.xml);
 # Android 10's AudioPolicyManager refuses to build without this.
 USE_XML_AUDIO_POLICY_CONF := 1
