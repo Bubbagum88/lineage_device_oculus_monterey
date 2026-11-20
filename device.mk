@@ -4,11 +4,8 @@
 #
 
 # A/B
-PRODUCT_PACKAGES += \
-    android.hardware.boot@1.2-impl \
-    android.hardware.boot@1.2-impl.recovery \
-    android.hardware.boot@1.2-service
-
+# The boot control HAL (boot@1.0 + bootctrl.msm8998) comes from the stock
+# blobs; boot@1.1/1.2 do not exist in Android 10.
 PRODUCT_PACKAGES += \
     update_engine \
     update_engine_sideload \
@@ -28,9 +25,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_SHIPPING_API_LEVEL := 25
 
 # Health
-PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-impl \
-    android.hardware.health@2.1-service
+# Provided by the stock blob android.hardware.health@2.0-service.monterey;
+# health@2.1 does not exist in Android 10.
 
 # Overlays
 PRODUCT_ENFORCE_RRO_TARGETS := *
@@ -40,14 +36,10 @@ PRODUCT_CHARACTERISTICS := nosdcard
 
 # Rootdir
 PRODUCT_PACKAGES += \
-
-PRODUCT_PACKAGES += \
     fstab.monterey \
-    init.rc \
     init.recovery.monterey.rc \
     init.recovery.oculus.rc \
-    ueventd.monterey.rc \
-    ueventd.rc \
+    ueventd.monterey.rc
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
