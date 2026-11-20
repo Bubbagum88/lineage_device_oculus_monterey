@@ -402,7 +402,7 @@ vendor/etc/vintf/manifest/android.hardware.thermal@2.0-service.monterey.xml
 vendor/lib64/libthermalutils.so
 
 # Time services
-vendor/app/TimeService/TimeService.apk
+-vendor/app/TimeService/TimeService.apk;PRESIGNED
 vendor/bin/time_daemon
 vendor/etc/init/init.time_daemon.rc
 vendor/lib/libtime_genoff.so
@@ -458,7 +458,7 @@ vendor/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini
 
 # Wi-Fi Display
 etc/wfdconfig.xml
-priv-app/WfdService/WfdService.apk
+-priv-app/WfdService/WfdService.apk
 
 # Miscellaneous
 vendor/bin/hw/vendor.oculus.hardware.catty@1.0-service
