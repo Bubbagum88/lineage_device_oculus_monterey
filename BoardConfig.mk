@@ -11,6 +11,9 @@ AB_OTA_PARTITIONS += \
     boot \
     system
 BOARD_USES_RECOVERY_AS_BOOT := true
+# No separate recovery partition: recovery lives in boot. Packaging reads
+# recovery.fstab from BOOT/RAMDISK only when this is set.
+TARGET_NO_RECOVERY := true
 
 # Architecture
 TARGET_ARCH := arm64
