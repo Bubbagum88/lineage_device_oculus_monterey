@@ -69,10 +69,14 @@ TARGET_COPY_OUT_VENDOR := system/vendor
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8998
-# Use LineageOS's msm8998 CAF trees and keep AOSP's hardware/qcom/* (its
-# camera HAL needs CAF include paths) out of the build. Every HAL here still
-# comes from the stock blobs; this only changes which source trees are parsed.
+# Keep AOSP's hardware/qcom/* out of the build (its camera HAL needs CAF
+# include paths).
 BOARD_USES_QCOM_HARDWARE := true
+# Display, audio and media HALs (hwcomposer.msm8998, gralloc, audio.primary,
+# OMX) all come from the stock blobs, so LineageOS's msm8998 CAF source trees
+# are not built: leaving them in defines modules with the same names as the
+# blobs, and hwcomposer.msm8998 fails its dependency check (no libmemalloc).
+QCOM_SOONG_NAMESPACE :=
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
