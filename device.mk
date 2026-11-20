@@ -72,7 +72,8 @@ PRODUCT_PACKAGES += \
     libwifi-hal-qcom \
     libwpa_client \
     wpa_cli \
-    wpa_supplicant
+    wpa_supplicant \
+    wpa_supplicant.conf
 
 # API levels
 PRODUCT_SHIPPING_API_LEVEL := 25
